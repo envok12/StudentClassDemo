@@ -27,11 +27,28 @@ namespace StudentClassDemo
 
         }
 
-        public Student()
+        public Student() : this("Unknown", -1) //2.1 
         {
 
         }
 
+        public Student(int newIdNumber) : this("Unknown", newIdNumber)// ConstructorsDemo
+        {
+            //name = "Unknown";
+            //idNumber = newIdNumber;
+        }
+
+        public Student(string newName) : this(newName, -1)
+        {
+            //name = newName;
+            //idNumber = -1;
+        }
+
+        public Student(string newName, int newIdNumber)
+        {
+            name = newName;
+            idNumber = newIdNumber;
+        }
         public string GetName()
         {
             return name;
