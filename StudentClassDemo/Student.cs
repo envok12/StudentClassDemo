@@ -8,8 +8,8 @@ namespace StudentClassDemo
     {
         private string name;
         private int idNumber;
-        private double score1;
-        private double score2;
+        private int score1;
+        private int score2;
         private double averageScore;
 
         public static void DoStuff()
@@ -29,7 +29,7 @@ namespace StudentClassDemo
 
         public Student() : this("Unknown", -1) //2.1 
         {
-
+            
         }
 
         public Student(int newIdNumber) : this("Unknown", newIdNumber)// ConstructorsDemo
@@ -49,47 +49,50 @@ namespace StudentClassDemo
             name = newName;
             idNumber = newIdNumber;
         }
-        public string GetName()
+       
+
+        public string Name
         {
-            return name;
+            get;
+            set;
         }
 
-        public void SetName(string newName)
+        public string IdNumber
         {
-            name = newName;
-        }
-            
-        public int GetIdNumber()
-        {
-            return idNumber;
+            get;
+            set;
         }
 
-        public void SetIdNumber(int newIdNumber)
+        public int Score1
         {
-            idNumber = newIdNumber;
+            get 
+            { return score1; 
+            }
+            set 
+            { 
+                score1 = value;
+                UpdateAverageScore();
+            }
         }
 
-        public double GetScore1()
+        public int Score2
         {
-            return score1;
+            get
+            {
+                return score2;
+            }
+            set
+            {
+                score2 = value;
+                UpdateAverageScore();
+            }
         }
-
-        public double GetScore2()
+        public double AverageScore
         {
-            return score2;
+            get;
+            private set;
         }
-
-        public void SetScore1(double newScore1)
-        {
-            score1 = newScore1;
-            UpdateAverageScore();
-        }
-
-        public void SetScore2(double newScore2)
-        {
-            score2 = newScore2;
-            UpdateAverageScore();
-        }
+       
 
         public double GetAverageScore()
         {
@@ -101,15 +104,18 @@ namespace StudentClassDemo
             averageScore = (score1 + score2) / 2;
         }
 
-        public double GetHighScore()
+       public double HighScore
         {
-            if(score1>score2)
+            get
             {
-                return score1;
-            }
-            else
-            {
-                return score2;
+                if (score1 > score2)
+                {
+                    return score1;
+                }
+                else
+                {
+                    return score2;
+                }
             }
         }
         

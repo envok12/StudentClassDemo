@@ -40,7 +40,7 @@ namespace StudentClassDemo
 
             jane.SetScore2(110);
             Console.WriteLine("Jane's new high score is {0}", jane.GetHighScore());
-            */
+            
 
             Student molly = new Student("Molly Cat", 1234); //1.2 Constructors Demo
 
@@ -56,6 +56,19 @@ namespace StudentClassDemo
 
             Console.WriteLine("kitKat’s Id Number: {0}", kitKat.GetIdNumber());
             Console.WriteLine("kitKat’s Name: {0}", kitKat.GetName());
+            */
+
+            //Properties Demo
+
+            Student molly = new Student("Molly Cat", 1234);
+
+            Console.WriteLine("Molly's name is: {0}", molly.Name);
+            Console.WriteLine("Molly's id Number is: {0}", molly.IdNumber);
+
+            molly.Score1 = 180;
+            molly.Score2 = 80;
+            Console.WriteLine("Molly's Average Score: {0}", molly.AverageScore);
+            Console.WriteLine("Molly's High Score: {0}", molly.HighScore);
 
 
         }
